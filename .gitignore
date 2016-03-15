@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+game-of-life.xcworkspace/xcuserdata/herval.xcuserdatad/UserInterfaceState.xcuserstate
+game-of-life.xcworkspace/xcuserdata/herval.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+game-of-life.xcodeproj/project.xcworkspace/xcuserdata/herval.xcuserdatad/UserInterfaceState.xcuserstate
+game-of-life.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+Pods/

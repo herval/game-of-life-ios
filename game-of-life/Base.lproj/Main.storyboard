@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10115" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LtF-Qk-ODN">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game of Life-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="game_of_life" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDP-Kk-SWs">
+                                <rect key="frame" x="30" y="496" width="32" height="30"/>
+                                <state key="normal" title="Step"/>
+                                <connections>
+                                    <action selector="step:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VeJ-7n-26C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-hj-PJi">
+                                <rect key="frame" x="535" y="496" width="35" height="30"/>
+                                <state key="normal" title="Seed"/>
+                                <connections>
+                                    <action selector="seed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6D-QL-5OA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hde-kF-IyJ">
+                                <rect key="frame" x="263" y="496" width="75" height="30"/>
+                                <state key="normal" title="Play/Pause"/>
+                                <connections>
+                                    <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNJ-xF-bDV"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xah-oy-e9V" customClass="BoardView" customModule="game_of_life" customModuleProvider="target">
+                                <rect key="frame" x="20" y="0.0" width="560" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hde-kF-IyJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Is-3a-9En"/>
+                            <constraint firstItem="aDP-Kk-SWs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="6NB-Lk-sSc"/>
+                            <constraint firstItem="xah-oy-e9V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6f6-5X-4Nf"/>
+                            <constraint firstItem="xah-oy-e9V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6pp-87-zMz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FqX-hj-PJi" secondAttribute="trailing" constant="10" id="HgL-vQ-uny"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FqX-hj-PJi" secondAttribute="bottom" constant="10" id="HsF-JR-1cr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aDP-Kk-SWs" secondAttribute="bottom" constant="10" id="JNK-we-vmK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xah-oy-e9V" secondAttribute="trailing" id="b6y-bE-m0c"/>
+                            <constraint firstItem="Hde-kF-IyJ" firstAttribute="top" secondItem="xah-oy-e9V" secondAttribute="bottom" id="ge1-qZ-KtT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hde-kF-IyJ" secondAttribute="bottom" constant="10" id="mfs-lR-CXk"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Game of Life" id="3aA-3e-e91"/>
+                    <connections>
+                        <outlet property="boardView" destination="xah-oy-e9V" id="OY8-1m-5Z6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="945"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GlA-1b-J7m">
+            <objects>
+                <navigationController id="LtF-Qk-ODN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WCV-EJ-W5s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sc6-Xc-Pbp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tR-Ff-1Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="945"/>
+        </scene>
+    </scenes>
+</document>
